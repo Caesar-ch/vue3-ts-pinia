@@ -1,0 +1,55 @@
+<template>
+  <!-- 单个商品组件，封装好后可以在panel里用数据递归使用 -->
+  <RouterLink :to="`/product/${goods.id}`" class='goods-item'>
+    <img :src="goods.picture" alt="">
+    <p class="name ellipsis">{{goods.name}}</p>
+    <p class="desc ellipsis">{{goods.desc}}</p>
+    <p class="price">&yen;{{goods.price}}</p>
+  </RouterLink>
+</template>
+
+<script lang="ts" setup>
+name: 'GoodsItem'
+const props = defineProps({
+  goods: {
+    type: Object,
+    default: () => ({})
+  }
+})
+</script>
+
+<style scoped lang='less'>
+@import '../../../assets/style/mixins.less';
+@import '../../../assets/style/variables.less';
+
+.goods-item {
+  display: block;
+  width: 220px;
+  padding: 20px 30px;
+  text-align: center;
+  .hoverShadow();
+
+  img {
+    width: 160px;
+    height: 160px;
+  }
+
+  p {
+    padding-top: 10px;
+  }
+
+  .name {
+    font-size: 16px;
+  }
+
+  .desc {
+    color: #999;
+    height: 29px;
+  }
+
+  .price {
+    color: @priceColor;
+    font-size: 20px;
+  }
+}
+</style>

@@ -1,0 +1,12 @@
+.output.js
+/node_modules/**
+# **/*.md
+**/*.svg
+**/*.sh
+# **/*.html
+/public/*
+/src/vender
+# package.json
+# .umi
+# .umi-production
+# .umi-test
